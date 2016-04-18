@@ -1,0 +1,101 @@
+MacInternBot
+======================
+[![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+
+A Telegram powered bot for performing little management tasks on your mac. Written using Ruby.
+
+# How do I set it up?
+
+## Step 0
+
+####
+Make sure you have Ruby installed on your mac. If not
+
+```
+brew install rbenv ruby-build
+
+# Add rbenv to bash so that it loads every time you open a terminal
+echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
+source ~/.bash_profile
+
+# Install Ruby
+rbenv install 2.2.3
+rbenv global 2.2.3
+ruby -v
+```
+Install the [telegrambot gem](https://github.com/atipugin/telegram-bot-ruby)
+```
+gem install telegram-bot-ruby
+```
+
+After completing this confirm installation of the gem by running
+```
+irb
+```
+
+Then
+
+![screenshot of expected irb command](https://raw.github.com/helios66/macinternmbot/master/logo/irb.png)
+
+A `true` indicates a successful import.
+
+
+## Step 1
+
+####
+Clone this repository 
+```
+git clone REPOS_URL
+```
+
+## Step 2
+
+####
+Get a bot token through the @BotFather, He would also aid you in setting up your botname.
+
+## Step 3
+
+####
+Configure the MacInternMBot.rb file with your token and your Telegram username.
+
+## Step 4
+
+####
+Run the `MacInternMBot.rb` on your terminal.
+
+## Step 5
+
+####
+Search for your bot by name on your telegram app. Start using your bot.
+
+
+Developed By
+-------
+Akapo Damilola (helios66) - <fdamilola@gmail.com>
+
+<a href="https://twitter.com/_fdamilola">
+<img alt="Follow me on Twitter"
+src="" width="75"/>
+</a>
+
+Contributions
+-------
+
+Any contribution are welcome!
+
+License
+-------
+
+    Copyright 2015 Cotta & Cush
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
