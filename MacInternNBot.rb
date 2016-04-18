@@ -11,7 +11,8 @@ def show_commands(name)
     /shutdown : Shuts down your mac immediately. \n
     /lock : Locks your mac immediately.\n
     /batterystat : Check current battery status \n
-    /uptime : Returns how long your mac has been up for.
+    /uptime : Returns how long your mac has been up for.\n
+    /terminate : Exits your bot.
     "
 end
 
@@ -48,6 +49,9 @@ Telegram::Bot::Client.run(TOKEN) do |bot|
               runCommand('/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend');
           when '/blank'
               bot.api.send_message(chat_id: message.chat.id, text: "Invalid command @#{message.from.username} I am still alive.");
+          when '/terminate'
+            bot.api.send_message(chat_id: message.chat.id, text: "Killing your macbot");
+            exit
           when '/'
               bot.api.send_message(chat_id: message.chat.id, text: show_commands(message.from.username));
         end
