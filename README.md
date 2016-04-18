@@ -35,7 +35,7 @@ irb
 
 Then
 
-![screenshot of expected irb command](https://raw.github.com/helios66/macinternmbot/master/logo/irb.png)
+![screenshot of expected irb command](https://raw.githubusercontent.com/hextremelabs/macinternnbot/master/logo/irb.png)
 
 A `true` indicates a successful import.
 
@@ -45,13 +45,13 @@ A `true` indicates a successful import.
 ####
 Clone this repository 
 ```
-git clone REPOS_URL
+git clone git@github.com:hextremelabs/macinternnbot.git
 ```
 
 ## Step 2
 
 ####
-Get a bot token through the @BotFather, He would also aid you in setting up your botname.
+Get a bot token through the @BotFather on your telegram app, He would also aid you in setting up your botname.
 
 ## Step 3
 
@@ -66,7 +66,8 @@ Run the `MacInternMBot.rb` on your terminal.
 ## Step 5
 
 ####
-Search for your bot by name on your telegram app. Start using your bot.
+Search for your bot by name on your telegram app. 
+Start using your bot.
 
 
 Developed By
@@ -75,7 +76,7 @@ Akapo Damilola (helios66) - <fdamilola@gmail.com>
 
 <a href="https://twitter.com/_fdamilola">
 <img alt="Follow me on Twitter"
-src="" width="75"/>
+src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/1259px-Twitter_bird_logo_2012.svg.png" width="75"/>
 </a>
 
 Contributions
@@ -86,7 +87,7 @@ Any contribution are welcome!
 License
 -------
 
-    Copyright 2015 Cotta & Cush
+    Copyright 2015 Hextremelabs
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
