@@ -9,7 +9,10 @@ def show_commands(name)
     /alive : Checks if I am alive and responds if I am. Test this command before sending serious commands\n
     /sleep : Puts mac to sleep immediately. \n
     /shutdown : Shuts down your mac immediately. \n
-    /lock : Locks your mac immediately."
+    /lock : Locks your mac immediately.\n
+    /batterystat : Check current battery status \n
+    /uptime : Returns how long your mac has been up for.
+    "
 end
 
 def error_msg(name)
@@ -32,6 +35,12 @@ Telegram::Bot::Client.run(TOKEN) do |bot|
           when '/sleep'
               bot.api.send_message(chat_id: message.chat.id, text: "Putting your mac to sleep now.");
               runCommand('pmset sleepnow')
+          when '/uptime'
+            output = `uptime`
+            bot.api.send_message(chat_id: message.chat.id, text: output);
+          when '/batterystat'
+            output = `pmset -g ps`
+            bot.api.send_message(chat_id: message.chat.id, text: output);
           when '/shutdown'
                bot.api.send_message(chat_id: message.chat.id, text: "Currently not allowed.");
           when '/lock'
