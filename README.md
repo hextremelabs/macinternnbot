@@ -61,7 +61,9 @@ Configure the MacInternMBot.rb file with your token and your Telegram username.
 ## Step 4
 
 ####
-Run the `MacInternMBot.rb` on your terminal.
+Run the `MacInternNBot.rb` on your terminal.
+
+`ruby MacInternNBot.rb`
 
 ## Step 5
 
