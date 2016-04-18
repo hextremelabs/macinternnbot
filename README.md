@@ -69,6 +69,11 @@ Run the `MacInternMBot.rb` on your terminal.
 Search for your bot by name on your telegram app. 
 Start using your bot.
 
+## Step 6
+
+####
+Suggest new nifty commands that can be added to the list of available commands. ;)
+
 
 Developed By
 -------
