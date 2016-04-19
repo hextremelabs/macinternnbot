@@ -89,7 +89,7 @@ src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012
 Contributions
 -------
 
-Any contribution is welcome!
+All contributions are welcome!
 
 License
 -------
