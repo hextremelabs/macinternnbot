@@ -50,8 +50,8 @@ Telegram::Bot::Client.run(TOKEN) do |bot|
           when '/blank'
               bot.api.send_message(chat_id: message.chat.id, text: "Invalid command @#{message.from.username} I am still alive.");
           when '/terminate'
-            bot.api.send_message(chat_id: message.chat.id, text: "Killing your macbot");
-            exit
+            #bot.api.send_message(chat_id: message.chat.id, text: "Killing your macbot");
+            #exit
           when '/'
               bot.api.send_message(chat_id: message.chat.id, text: show_commands(message.from.username));
         end
