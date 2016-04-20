@@ -15,14 +15,11 @@ TOKEN = config_data["token"];
 USER = config_data["username"];
 
 def show_commands(name)
-    return "Hi @#{name}, I am your mac bot. You can use me for stuff like remotely shutting down, sleeping and checking the state of your mac. 
-    Here are a few of my commands \n/alive : Checks if I am alive and responds if I am. Test this command before sending serious commands\n
-    /sleep : Puts mac to sleep immediately. \n/shutdown : Shuts down your mac immediately. \n/lock : Locks your mac immediately.\n/batterystat : Check current battery status \n
-    /uptime : Returns how long your mac has been up for.\n/screenshot : Creates a screenshot of your mac desktop."
+    return "Hi @#{name}, I am your mac bot. You can use me for performing nifty tasks on your mac via your telegram app.\nHere are a few of my commands \n/alive : Checks if I am alive and responds if I am. Test this command before sending serious commands\n/sleep : Puts mac to sleep immediately. \n/shutdown : Shuts down your mac immediately. \n/lock : Locks your mac immediately.\n/batterystat : Check current battery status \n/uptime : Returns how long your mac has been up for.\n/screenshot : Creates a screenshot of your mac desktop."
 end
 
 def error_msg(name)
-    return "Hi @#{name}, I haven't been set up yet. \n If you want to set up your own mac bot, visit https://github.com/hextremelabs/macinternnbot"
+    return "Hi @#{name}, I haven't been set up yet. \n Setting up your own mac intern bot is pretty easy, visit https://github.com/hextremelabs/macinternnbot"
 end
 
 def runCommand(command)
