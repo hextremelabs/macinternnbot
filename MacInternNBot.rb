@@ -9,24 +9,16 @@ Create a config.txt file with this content
 
 config = File.read('config.txt');
 
-p config
-
 config_data = JSON.parse(config);
 
 TOKEN = config_data["token"];
 USER = config_data["username"];
 
 def show_commands(name)
-    return '''Hi @#{name}, I am your mac bot. You can use me for stuff like remotely shutting down, sleeping and checking the state of your mac. 
-    Here are a few of my commands \n
-    /alive : Checks if I am alive and responds if I am. Test this command before sending serious commands\n
-    /sleep : Puts mac to sleep immediately. \n
-    /shutdown : Shuts down your mac immediately. \n
-    /lock : Locks your mac immediately.\n
-    /batterystat : Check current battery status \n
-    /uptime : Returns how long your mac has been up for.\n
-    /screenshot : Creates a screenshot of your mac desktop.
-    '''
+    return "Hi @#{name}, I am your mac bot. You can use me for stuff like remotely shutting down, sleeping and checking the state of your mac. 
+    Here are a few of my commands \n/alive : Checks if I am alive and responds if I am. Test this command before sending serious commands\n
+    /sleep : Puts mac to sleep immediately. \n/shutdown : Shuts down your mac immediately. \n/lock : Locks your mac immediately.\n/batterystat : Check current battery status \n
+    /uptime : Returns how long your mac has been up for.\n/screenshot : Creates a screenshot of your mac desktop."
 end
 
 def error_msg(name)
@@ -39,7 +31,6 @@ end
 
 Telegram::Bot::Client.run(TOKEN) do |bot|
     bot.listen do |message|
-      #puts message.text, message.from.username
       if message.from.username == USER
         case message.text
           when '/start'

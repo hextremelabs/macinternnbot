@@ -25,7 +25,7 @@ ruby -v
 ```
 Install the [telegrambot gem](https://github.com/atipugin/telegram-bot-ruby)
 ```
-gem install telegram-bot-ruby
+sudo gem install telegram-bot-ruby json
 ```
 
 After completing this confirm installation of the gem by running
@@ -56,7 +56,7 @@ Get a bot token through the @BotFather on your telegram app, He would also aid y
 ## Step 3
 
 ####
-Configure the MacInternMBot.rb file with your token and your Telegram username.
+Configure the `MacInternNBot.rb` file with your token and your Telegram username by creating a config.txt file as recommended in the `MacInternNBot.rb` file.
 
 ## Step 4
 
