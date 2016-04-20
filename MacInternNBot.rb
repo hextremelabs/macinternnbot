@@ -1,10 +1,23 @@
 require 'telegram/bot'
+require 'json'
 
-TOKEN = ""; #Telegram bot token generated from the @BotFather
-USER = "" #Your username on telegram
+'''
+Create a config.txt file with this content 
+{"token": "TELEGRAM BOT TOKEN" , 
+  "username": "TELEGRAM username"}
+'''
+
+config = File.read('config.txt');
+
+p config
+
+config_data = JSON.parse(config);
+
+TOKEN = config_data["token"];
+USER = config_data["username"];
 
 def show_commands(name)
-    return "Hi @#{name}, I am your mac bot. You can use me for stuff like remotely shutting down, sleeping and checking the state of your mac. 
+    return '''Hi @#{name}, I am your mac bot. You can use me for stuff like remotely shutting down, sleeping and checking the state of your mac. 
     Here are a few of my commands \n
     /alive : Checks if I am alive and responds if I am. Test this command before sending serious commands\n
     /sleep : Puts mac to sleep immediately. \n
@@ -12,8 +25,8 @@ def show_commands(name)
     /lock : Locks your mac immediately.\n
     /batterystat : Check current battery status \n
     /uptime : Returns how long your mac has been up for.\n
-    /terminate : Exits your bot.
-    "
+    /screenshot : Creates a screenshot of your mac desktop.
+    '''
 end
 
 def error_msg(name)
@@ -49,11 +62,12 @@ Telegram::Bot::Client.run(TOKEN) do |bot|
               runCommand('/System/Library/CoreServices/"Menu Extras"/User.menu/Contents/Resources/CGSession -suspend');
           when '/blank'
               bot.api.send_message(chat_id: message.chat.id, text: "Invalid command @#{message.from.username} I am still alive.");
-          when '/terminate'
-            #bot.api.send_message(chat_id: message.chat.id, text: "Killing your macbot");
-            #exit
           when '/'
               bot.api.send_message(chat_id: message.chat.id, text: show_commands(message.from.username));
+          when '/screenshot'
+            runCommand('screencapture -x -r -t jpg macbot_screenshot.jpg');
+            bot.api.send_message(chat_id: message.chat.id, text: "Preparing screenshot. Please wait....");
+            bot.api.send_photo(chat_id: message.chat.id, photo: Faraday::UploadIO.new('macbot_screenshot.jpg', 'image/jpeg'))
         end
       else
         bot.api.send_message(chat_id: message.chat.id, text: error_msg(message.from.username));
